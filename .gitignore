@@ -1,0 +1,20 @@
+# ===== FICHIERS SYSTÈME =====
+.DS_Store
+Thumbs.db
+*.log
+
+# ===== EDITEUR VS CODE =====
+.vscode/
+
+# ===== FICHIERS TEMPORAIRES =====
+*.tmp
+*.bak
+*~
+
+# ===== SI J'UTILISE NODE/NPM PLUS TARD =====
+node_modules/
+
+# ===== FICHIERS CSS GÉNÉRÉS (si j'utilise SASS/LESS) =====
+*.css.map
+*.sass.map
+*.scss.map
