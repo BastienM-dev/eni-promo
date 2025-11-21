@@ -1,7 +1,7 @@
 # ENI Promo - Site de Promotion
 
    ## 📋 Description
-   Site web de présentation de la promotion Développeur Web 2024 de l'ENI.
+   Site web de présentation de la promotion Développeur Web 2025 de l'ENI.
 
    ## 🚀 Fonctionnalités
    - Affichage de la liste des apprenants

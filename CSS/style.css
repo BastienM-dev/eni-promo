@@ -25,6 +25,7 @@ header {
     border: 2px black solid;
     width: 100px;
     height: auto;
+    border-radius: 3px;
 }
 
 nav ul {
@@ -40,8 +41,85 @@ nav a {
     padding: 10px;
     text-decoration: none;
     background-color: #fff;
+    border-radius: 3px;
 }
 
 nav a:hover {
     background-color: #f0f0f0;
+}
+
+
+
+/* ====== TYPE AFFICHAGE ======*/
+#type-affichage {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 80px; /* Padding ajusté pour aligner avec la navigation */
+    align-items: center;
+    gap: 12px;
+    
+}
+
+
+/* ====== MAIN ======*/
+main {
+    padding: 20px 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+
+
+
+/* ====== SECTION ====== */
+table {
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: 20px;
+}
+
+th {
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+td {
+    padding: 10px;
+}
+
+th:not(:last-child),
+td:not(:last-child) {
+    border-right: 2px solid black;
+}
+
+button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ebe8e8;
+}
+
+#zone-apprenants {
+    border-radius: 3px;
+    overflow: hidden;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+
+/* ====== FOOTER ======*/
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: rgb(77, 75, 75);
+    font-size: 13px;
 }
