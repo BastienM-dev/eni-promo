@@ -184,3 +184,24 @@ footer {
     }
     
 }
+
+/* Responsive desktop */
+@media (min-width: 1024px) {
+    
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    #zone-apprenants {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    table {
+        width: 100%;
+        max-width: 900px;
+    }
+    
+}
