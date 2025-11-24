@@ -1,33 +1,41 @@
+/* ====== RESET CSS ====== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ====== STYLES DE BASE ====== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecee;
     color: #333;
-    background-color: #fff;
     line-height: 1.6;
 }
 
-/* ====== HEADER ======*/
+h2 {
+    color: #022c5c;
+    margin-bottom: 10px;
+}
+
+/* ====== HEADER ====== */
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
     padding: 20px;
-    background-color: #fff;
-    justify-content: space-between;
+    background-color: #022c5c;
+    color: white;
 }
 
 .logo {
-    border: 2px black solid;
     width: 100px;
     height: auto;
     border-radius: 3px;
 }
 
+/* Navigation */
 nav ul {
     display: flex;
     list-style: none;
@@ -36,53 +44,51 @@ nav ul {
 
 nav a {
     display: block;
-    border: 2px black solid;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
     padding: 10px;
-    text-decoration: none;
-    background-color: #fff;
+    border: 2px solid #0052b3;
     border-radius: 3px;
+    background-color: #0052b3;
+    color: white;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav a:hover {
-    background-color: #f0f0f0;
+    background-color: #022550;
 }
 
-
-
-/* ====== TYPE AFFICHAGE ======*/
+/* ====== TYPE AFFICHAGE ====== */
 #type-affichage {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 80px; /* Padding ajusté pour aligner avec la navigation */
     align-items: center;
     gap: 12px;
-    
+    padding: 10px 80px;
 }
 
-
-/* ====== MAIN ======*/
+/* ====== MAIN ====== */
 main {
-    padding: 20px 20px;
+    padding: 20px;
 }
 
-h2 {
-    margin-bottom: 10px;
+/* ====== TABLEAU ====== */
+#zone-apprenants {
+    width: fit-content;
+    background-color: white;
+    border: 2px solid #0052b3;
+    border-radius: 3px;
+    overflow: hidden;
 }
 
-
-
-
-/* ====== SECTION ====== */
 table {
     border-collapse: collapse;
     text-align: left;
-    border-radius: 20px;
 }
 
 th {
-    background-color: lightgrey;
     padding: 5px;
+    background-color: #0052b3;
+    color: white;
 }
 
 td {
@@ -91,35 +97,37 @@ td {
 
 th:not(:last-child),
 td:not(:last-child) {
-    border-right: 2px solid black;
+    border-right: 2px solid #999ca0;
 }
 
+tbody tr:nth-child(even) {
+    background-color: #b8d8ff;
+}
+
+/* Boutons Détail */
 button {
     background: none;
     border: none;
-    color: blue;
+    padding: 0;
+    color: #022c5c;
+    font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #ebe8e8;
+button:hover {
+    color: #0052b3;
 }
 
-#zone-apprenants {
-    border-radius: 3px;
-    overflow: hidden;
-    border: 2px solid black;
-    width: fit-content;
-}
-
-
-/* ====== FOOTER ======*/
+/* ====== FOOTER ====== */
 footer {
-    text-align: center;
     margin-top: 40px;
     padding: 20px;
-    border-top: 1px solid #ddd;
-    color: rgb(77, 75, 75);
+    background-color: #022c5c;
+    color: white;
+    text-align: center;
     font-size: 13px;
 }
+
+/* ====== THEME SOMBRE ====== */
+/* (À venir) */
