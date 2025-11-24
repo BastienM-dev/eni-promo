@@ -171,3 +171,16 @@ footer {
         width: 100%;
     }
 }
+
+/* Responsive tablette */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    #zone-apprenants {
+        width: 100%;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+}
