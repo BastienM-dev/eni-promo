@@ -151,29 +151,24 @@ body.dark-theme {
     background-color: #1d4ed8;
 }
 
-/* Conteneur du tableau */
 .dark-theme #zone-apprenants {
     background-color: #1a2332;
     border-color: #334155;
 }
 
-/* En-tête du tableau */
 .dark-theme th {
     background-color: #1e40af;
     color: white;
 }
 
-/* Cellules normales */
 .dark-theme td {
     color: #e2e8f0;
 }
 
-/* Lignes alternées */
 .dark-theme tbody tr:nth-child(even) {
     background-color: #1e293b;
 }
 
-/* Bordures entre colonnes */
 .dark-theme th:not(:last-child),
 .dark-theme td:not(:last-child) {
     border-color: #334155;
