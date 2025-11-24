@@ -20,7 +20,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="preference-main">
         <h2>Préférences du site</h2>
             <div class="preference-section">
                 <label for="theme-select">Thème du site</label>
@@ -32,11 +32,13 @@
 
             <div class="preference-section">
                 <label>Format d'affichage de la liste des apprenants</label>
-                <input type="radio" id="liste" name="displayMode" value="liste" checked>
-                <label for="liste">Liste (Table)</label>
+                <div class="radio-group">
+                    <input type="radio" id="liste" name="displayMode" value="liste" checked>
+                    <label for="liste">Liste (Table)</label>
 
-                <input type="radio" id="cartes" name="displayMode" value="cartes">
-                <label for="cartes">Cartes (Grid)</label>
+                    <input type="radio" id="cartes" name="displayMode" value="cartes">
+                    <label for="cartes">Cartes (Grid)</label>
+                </div>
             </div>
 
             <div class="preference-buttons">

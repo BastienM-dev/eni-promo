@@ -8,14 +8,16 @@
 /* ====== STYLES DE BASE ====== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecee;
+    background-color: #dbdee0;
     color: #333;
     line-height: 1.6;
 }
 
 h2 {
     color: #022c5c;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* ====== HEADER ====== */
@@ -55,6 +57,8 @@ nav a {
 
 nav a:hover {
     background-color: #022550;
+    color: white;
+    text-decoration: none;
 }
 
 /* ====== TYPE AFFICHAGE ====== */
@@ -104,7 +108,6 @@ tbody tr:nth-child(even) {
     background-color: #b8d8ff;
 }
 
-/* Boutons Détail */
 button {
     background: none;
     border: none;
@@ -117,6 +120,165 @@ button {
 
 button:hover {
     color: #0052b3;
+}
+
+/* ====== PAGE PRÉFÉRENCES ====== */
+.preference-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preference-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 700px;
+    gap: 20px;
+}
+
+.preference-section label {
+    font-weight: bold;
+}
+
+.preference-section select {
+    padding: 5px;
+    border: 2px solid #0052b3;
+    border-radius: 4px;
+    min-width: 100px;
+}
+
+.preference-section input[type="radio"] {
+    margin-right: 20px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+}
+
+.preference-buttons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.preference-buttons [type="button"] {
+    background-color: #0052b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #0052b3;
+    cursor: pointer;
+    gap: 15px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.preference-buttons [type="button"]:hover {
+    background-color: #022550;
+}
+
+/* ====== PAGE INFORMATIONS ====== */
+.info-generales {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.info-section {
+    padding: 20px;
+    border: 2px solid #0052b3;
+    background-color: white;
+    border-radius: 4px;
+    min-height: 200px;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+a {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #022c5c;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #0052b3;
+    text-decoration: underline;
+}
+
+li {
+    margin-bottom: 10px;
+}
+.info-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.info-buttons [type="button"] {
+    background-color: #0052b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #0052b3;
+    cursor: pointer;
+    gap: 15px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.info-buttons [type="button"]:hover {
+    background-color: #022550;
+}
+
+.info-column {
+    flex: 1;
+}
+
+/* ====== PAGE CARTE ====== */
+#map {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 15px;
+}
+
+.carte-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+.carte-buttons [type="button"] {
+    background-color: #0052b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #0052b3;
+    cursor: pointer;
+    gap: 15px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.carte-buttons [type="button"]:hover {
+    background-color: #022550;
 }
 
 /* ====== FOOTER ====== */
@@ -191,8 +353,75 @@ body.dark-theme {
 }
 
 .dark-theme footer {
-    background-color: #021b38;
+    background-color: #0a1220;
     color: #e2e8f0;
+}
+
+/* Page préférences en mode sombre */
+.dark-theme .preference-section label {
+    color: #e2e8f0;
+}
+
+.dark-theme .preference-section select {
+    background-color: #1a2332;
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+.dark-theme .radio-group label {
+    color: #e2e8f0;
+}
+
+.dark-theme .preference-buttons [type="button"] {
+    background-color: #143680;
+    border-color: #143680;
+    color: white;
+}
+
+.dark-theme .preference-buttons [type="button"]:hover {
+    background-color: #1d4ed8;
+}
+
+/* Page informations en mode sombre */
+.dark-theme .info-generales {
+    color: #e2e8f0;
+}
+
+.dark-theme .info-section {
+    background-color: #1a2332;
+    border-color: #334155;
+}
+
+.dark-theme .info-column h3 {
+    color: #e2e8f0;
+}
+
+.dark-theme a {
+    color: #60a5fa;
+}
+
+.dark-theme a:hover {
+    color: #93c5fd;
+}
+
+.dark-theme .info-buttons [type="button"] {
+    background-color: #143680;
+    border-color: #143680;
+}
+
+.dark-theme .info-buttons [type="button"]:hover {
+    background-color: #1d4ed8;
+}
+
+/* Page carte en mode sombre */
+.dark-theme .carte-buttons [type="button"] {
+    background-color: #143680;
+    border-color: #143680;
+    color: white;
+}
+
+.dark-theme .carte-buttons [type="button"]:hover {
+    background-color: #1d4ed8;
 }
 
 /* ====== MEDIA QUERIES ======*/
@@ -232,6 +461,18 @@ body.dark-theme {
 
     table {
         width: 100%;
+    }
+
+    /* Page préférences */
+    .preference-section {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Page info */
+    .info-content {
+        flex-direction: column;
     }
 }
 
