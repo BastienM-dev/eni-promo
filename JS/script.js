@@ -114,15 +114,32 @@ if (btnEnregistrer) {
     changerTheme(themeChoisi)
 
     localStorage.setItem('theme', themeChoisi)
+
+    const formatChoisi = document.querySelector('input[name="displayMode"]:checked')
+    const valeurFormat = formatChoisi.value
+
+    localStorage.setItem('format', valeurFormat)
 })
 }
 
-function chargerThemeSauvegarde() {
+function chargerPreferences() {
     const themeSauvegarde = localStorage.getItem('theme')
 
     if (themeSauvegarde) {
         changerTheme(themeSauvegarde)
     }
+
+    const formatSauvegarde = localStorage.getItem('format')
+
+    if (formatSauvegarde) {
+        const boutonRadio = document.querySelector(`input[name="displayMode"][value="${formatSauvegarde}"]`)
+        if (boutonRadio) {
+            boutonRadio.checked = true
+        }
+    }
 }
 
-chargerThemeSauvegarde()
+chargerPreferences()
+
+
+/* AFFICHAGE LISTE/CARTE */

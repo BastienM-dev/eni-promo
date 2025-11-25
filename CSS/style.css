@@ -366,6 +366,7 @@ body.dark-theme {
 
 .dark-theme nav a:hover {
     background-color: #1d4ed8;
+    color: white;
 }
 
 .dark-theme #zone-apprenants {
@@ -466,6 +467,7 @@ body.dark-theme {
 
 .dark-theme .info-buttons [type="button"]:hover {
     background-color: #1d4ed8;
+    color: white;
 }
 
 /* Page carte en mode sombre */
