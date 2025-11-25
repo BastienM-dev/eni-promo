@@ -22,6 +22,8 @@ function chargerApprenants() {
 function afficherApprenants(apprenants) {
     const tbody = document.getElementById('apprenants-liste')
 
+    if (!tbody) return
+
     tbody.innerHTML = '';
 
     apprenants.forEach(apprenant => {
@@ -40,7 +42,9 @@ function afficherApprenants(apprenants) {
     ajouterEvenementsDetail()
 }
 
-chargerApprenants()
+if (document.getElementById('apprenants-liste')) {
+    chargerApprenants()
+}
 
 function ajouterEvenementsDetail() {
     const boutonsDetail = document.querySelectorAll('button[data-id]')
@@ -77,10 +81,48 @@ function fermerModale() {
 }
 
 const fermeture = document.querySelector('.modale-fermer')
-fermeture.addEventListener('click', fermerModale)
 
-modale.addEventListener('click', function(event) {
-    if (event.target === modale) {
-        fermerModale()
+if (fermeture) {
+    fermeture.addEventListener('click', fermerModale)
+}
+
+if (modale) {
+    modale.addEventListener('click', function(event) {
+        if (event.target === modale) {
+            fermerModale()
+        }  
+    })
+}
+
+
+/* THEME et STOCKAGE */
+function changerTheme(theme) {
+    if (theme === 'sombre') {
+        document.body.classList.add('dark-theme')
+    } else {
+        document.body.classList.remove('dark-theme')
     }
+}
+
+const btnEnregistrer = document.getElementById('btn-enregistrer')
+
+if (btnEnregistrer) {
+    btnEnregistrer.addEventListener('click', function() {
+        const selectTheme = document.getElementById('theme-select')
+        const themeChoisi = selectTheme.value
+
+    changerTheme(themeChoisi)
+
+    localStorage.setItem('theme', themeChoisi)
 })
+}
+
+function chargerThemeSauvegarde() {
+    const themeSauvegarde = localStorage.getItem('theme')
+
+    if (themeSauvegarde) {
+        changerTheme(themeSauvegarde)
+    }
+}
+
+chargerThemeSauvegarde()
