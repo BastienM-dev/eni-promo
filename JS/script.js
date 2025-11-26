@@ -14,30 +14,48 @@ function chargerApprenants() {
         .then(data => {
             console.log('Données chargées:', data)
             tousLesApprenants = data.apprenants
-            afficherApprenants(data.apprenants)
+            
+            basculerAffichage()
         })
         
 }
 
 function afficherApprenants(apprenants) {
-    const tbody = document.getElementById('apprenants-liste')
+    const conteneur = document.getElementById('zone-apprenants')
 
-    if (!tbody) return
+    if (!conteneur) return
 
-    tbody.innerHTML = '';
+    // Recréer la structure complète du tableau
+    let tableauHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Ville</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="apprenants-liste">
+    `
 
     apprenants.forEach(apprenant => {
-        const ligne = `
+        tableauHTML += `
             <tr>
                 <td>${apprenant.nom}</td>
                 <td>${apprenant.prenom}</td>
                 <td>${apprenant.ville}</td>
                 <td><button data-id="${apprenant.id}">Détail</button></td>
             </tr>
-            `
-
-        tbody.innerHTML += ligne
+        `
     })
+
+    tableauHTML += `
+            </tbody>
+        </table>
+    `
+
+    conteneur.innerHTML = tableauHTML
 
     ajouterEvenementsDetail()
 }
@@ -155,3 +173,80 @@ chargerPreferences()
 
 
 /* AFFICHAGE LISTE/CARTE */
+function afficherApprenantsCarte(apprenants) {
+    const conteneur = document.getElementById('zone-apprenants')
+
+    if (!conteneur) return
+    conteneur.innerHTML = ''
+
+    apprenants.forEach(apprenant => {
+        const carte = 
+        `
+        <div class="apprenant-carte">
+            <h3>${apprenant.nom} ${apprenant.prenom}</h3>
+            <p>${apprenant.ville}</p>
+            <button data-id="${apprenant.id}">Détail</button>
+        </div>
+        `
+
+        conteneur.innerHTML += carte
+    })
+
+    ajouterEvenementsDetail()
+}
+
+function basculerAffichage() {
+
+    const formatChoisi = document.querySelector('input[name="displayMode"]:checked')
+
+    if (!formatChoisi) return
+    
+    const valeur = formatChoisi.value
+    const conteneur = document.getElementById('zone-apprenants')
+
+    if (valeur === 'liste') {
+        afficherApprenants(tousLesApprenants)
+        conteneur.classList.add('mode-liste')
+        conteneur.classList.remove('mode-cartes')
+    } else {
+        afficherApprenantsCarte(tousLesApprenants)
+        conteneur.classList.add('mode-cartes')
+        conteneur.classList.remove('mode-liste')
+    }
+}
+
+const boutonsRadio = document.querySelectorAll('input[name="displayMode"]')
+
+boutonsRadio.forEach(bouton => {
+    bouton.addEventListener('change', function() {
+        basculerAffichage()
+    })
+})
+
+/* CARTE LEAFLET */
+if (document.getElementById('map')) {
+    const carte = L.map('map').setView([46.603354, 1.888334], 6)
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(carte);
+
+    fetch('JSON/promo.json')
+        .then(response => response.json())
+        .then(data => {
+            data.apprenants.forEach(apprenant => {
+                if (apprenant.coordonnees.latitude && apprenant.coordonnees.longitude) {
+                    const lat = parseFloat(apprenant.coordonnees.latitude)
+                    const lng = parseFloat(apprenant.coordonnees.longitude)
+
+                    const marqueur = L.marker([lat, lng]).addTo(carte)
+
+                    marqueur.bindPopup(`
+                        <strong>${apprenant.prenom} ${apprenant.nom}</strong><br>
+                        <em>${apprenant.ville}</em>
+                        `)
+                }
+            })
+        })
+}
