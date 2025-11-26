@@ -17,6 +17,9 @@ function chargerApprenants() {
             
             basculerAffichage()
         })
+        .catch(error => {
+            console.error('Erreur lors du chargement des données:', error)
+        })
         
 }
 
@@ -60,7 +63,7 @@ function afficherApprenants(apprenants) {
     ajouterEvenementsDetail()
 }
 
-if (document.getElementById('apprenants-liste')) {
+if (document.getElementById('zone-apprenants')) {
     chargerApprenants()
 }
 
@@ -249,4 +252,7 @@ if (document.getElementById('map')) {
                 }
             })
         })
+        .catch(error => {
+        console.error('Erreur lors du chargement des données pour la carte:', error)
+    })
 }
