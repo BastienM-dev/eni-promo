@@ -63,10 +63,22 @@ function afficherModale(id) {
 
     const contenuHTML = 
     `
-    <img src="assets/images/${apprenant.avatar}">
-    <h2>${apprenant.nom} ${apprenant.prenom}</h2>
-    <p><strong>Ville</strong> : ${apprenant.ville}</p>
-    <p><strong>Anecdotes</strong> : ${apprenant.anecdotes}</p>
+    <div class="modale-haut">
+        <img src="assets/images/${apprenant.avatar}">
+        <div class="modale-infos">
+            <p><strong>Nom</strong> : ${apprenant.nom}</p>
+            <p><strong>Prenom</strong> : ${apprenant.prenom}</p>
+            <p><strong>Ville</strong> : ${apprenant.ville}</p>
+        </div>
+    </div>
+
+    <h3>Anecdotes de l'apprenant :</h3>
+    <div class="modale-anecdotes">
+        
+        <div class="modale-anecdotes-texte">
+            ${apprenant.anecdotes}
+        </div>
+    </div>
     `
     
     const divModale = document.getElementById('modale-info')
